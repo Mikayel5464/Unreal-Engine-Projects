@@ -17,10 +17,6 @@ void AMovingPlatform::BeginPlay()
 	Super::BeginPlay();
 	
 	//UE_LOG(LogTemp, Display, TEXT("MemberFloat: %f"), MemberFloat);
-
-	TestVector.Z = 2.5f;
-
-	UE_LOG(LogTemp, Display, TEXT("MovingPlatformDefaultCoordinates: X: %f, Y: %f, Z: %f"), TestVector.X, TestVector.Y, TestVector.Z);
 }
 
 // Called every frame
@@ -28,5 +24,9 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	FVector CurrentLocation = GetActorLocation();
+	CurrentLocation += PlatformVelocity * DeltaTime;
+
+	SetActorLocation(PlatformVelocity);
 }
 

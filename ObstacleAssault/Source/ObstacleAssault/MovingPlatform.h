@@ -23,6 +23,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	/*
 	UPROPERTY(EditAnywhere)
 	float MemberFloat = 10.0f;
 
@@ -31,5 +32,8 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	FVector TestVector = FVector(11.2f, 3.4f, 7.6f);
+	*/
 
+	UPROPERTY(EditAnywhere)
+	FVector PlatformVelocity = FVector(0.0f, 0.0f, 0.0f);
 };
